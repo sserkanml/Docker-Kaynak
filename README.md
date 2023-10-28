@@ -123,11 +123,11 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
     
     * docker search komutu, Docker Hub veya başka bir Docker imaj deposundaki imajları aramanızı sağlar.
       
-    ```bash
+  ```bash
       docker search <keyword>
       # Örneğin, Ubuntu ile ilgili imajları aramak için:
       docker search ubuntu
-    ```
+  ```
 12. Docker network:
     
     * docker network, Docker ortamında ağ oluşturma ve yönetme işlemlerini gerçekleştirmek için kullanılan bir komuttur.
