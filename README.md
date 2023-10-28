@@ -112,14 +112,14 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
    ```bash
      docker login
    ```
-11. Docker logout:
+12. Docker logout:
     
    * docker logout komutu, Docker imaj deposundan (örneğin Docker Hub) oturumu kapatmanızı sağlar.
      
      ```bash
      docker logout
      ```
-11. Docker search:
+13. Docker search:
     
     * docker search komutu, Docker Hub veya başka bir Docker imaj deposundaki imajları aramanızı sağlar.
       
@@ -128,11 +128,11 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
       # Örneğin, Ubuntu ile ilgili imajları aramak için:
       docker search ubuntu
   ```
-12. Docker network:
+14. Docker network:
     
     * docker network, Docker ortamında ağ oluşturma ve yönetme işlemlerini gerçekleştirmek için kullanılan bir komuttur.
       
-    ```bash
+  ```bash
     # Ağı Listeleme:
     docker network ls
     # Ağ Oluşturma:
@@ -143,8 +143,8 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
     docker network connect my_network my_container
     # Ağı Konteynerden Kaldırma:
     docker network disconnect my_network my_container
-    ```
-13. Docker volume:
+  ```
+15. Docker volume:
     
     * docker volume, Docker ortamında veri saklama ve paylaşma işlemlerini gerçekleştirmek için kullanılan bir komuttur.
       
@@ -160,7 +160,7 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
       # Birden Fazla Volume Tanımlama:
       docker run -d -v my_volume1:/data1 -v my_volume2:/data2 my_image
     ```
-  15. Docker kill:
+  16. Docker kill:
       
       * docker kill komutu, çalışan bir Docker konteynerini zorla sonlandırmak için kullanılır.
         
@@ -171,9 +171,9 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
       
       * docker logs komutu, belirli bir Docker konteynerinin loglarını görüntülemek için kullanılır.
         
-      ```bash
+    ```bash
         docker logs my_container
-      ```
+    ```
   19. Docker rm:
       
       * docker rm komutu, bir veya birden fazla Docker konteynerini silmek için kullanılır.
