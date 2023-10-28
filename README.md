@@ -25,7 +25,8 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
 
 1. Docker run:
 * docker run komutu ile docker image'larınızdan container'lar oluşturabilirsiniz.
-* ```bash
+  
+ ```bash
   # en temel haliyle image çalıştırma:
   docker run nginx
   # Bir konteyneri arka planda çalıştırma:
