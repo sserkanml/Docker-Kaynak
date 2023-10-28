@@ -24,7 +24,7 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
 ## Docker Komutları
 
 1. Docker run:
-* docker run komutu ile docker image'larınızdan container'lar oluşturabilirsiniz.
+   * docker run komutu ile docker image'larınızdan container'lar oluşturabilirsiniz.
   
  ```bash
   # en temel haliyle image çalıştırma:
@@ -43,7 +43,7 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
   docker run -v /host/dizin:/container/dizin my_image
   ```
 2. Docker exec:
-* docker exec komutu, Docker konteyneri içinde çalışan bir komutu yürütmek için kullanılır.
+   * docker exec komutu, Docker konteyneri içinde çalışan bir komutu yürütmek için kullanılır.
   
   ```bash
   # Bir komut çalıştırma:
@@ -58,7 +58,7 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
   docker exec -u www-data my_container whoami
   ```
 3. Docker ps:
-* docker ps komutu, çalışan Docker konteynerlerini listeler.
+   * docker ps komutu, çalışan Docker konteynerlerini listeler.
   
   ```bash
   # Tüm çalışan konteynerleri listele:
