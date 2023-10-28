@@ -175,7 +175,7 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
 ```bash
         docker logs my_container
 ```
-19. Docker rm:
+18. Docker rm:
       
 * docker rm komutu, bir veya birden fazla Docker konteynerini silmek için kullanılır.
         
@@ -184,7 +184,7 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
          # Birden fazla konteyneri silmek için
          docker rm container1 container2 container3
 ```
-21. Docker stop:
+19. Docker stop:
     
 * docker stop komutu, çalışan bir Docker konteynerini durdurmak için kullanılır.
         
@@ -193,28 +193,28 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
         # Birden fazla konteyneri durdurmak için:
         docker stop container1 container2 container3
 ```
-22. Docker inspect:
+20. Docker inspect:
     
 * docker inspect komutu, belirli bir Docker nesnesinin (konteyner, imaj, ağ vb.) ayrıntılarını JSON formatında görüntülemek için kullanılır.
         
 ```bash
         docker inspect my_container
 ```
-23. Docker history:
+21. Docker history:
     
 * docker history komutu, bir Docker imajının oluşturulma geçmişini görüntülemek için kullanılır.
         
 ```bash
         docker history ubuntu
 ```
-25. Docker pause:
+22. Docker pause:
     
 * docker pause komutu, bir çalışan Docker konteynerini geçici olarak duraklatmak için kullanılır.
         
 ```bash
         docker pause my_container
 ```
-26. Docker unpause:
+23. Docker unpause:
     
 * docker unpause komutu, duraklatılmış bir Docker konteynerini yeniden başlatmak için kullanılır.
         
