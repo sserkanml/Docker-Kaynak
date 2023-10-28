@@ -18,6 +18,27 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
 
 3. Docker konteyneri çalıştırmak için şu komutu kullanın:
 
-   ```bash
+```bash
    docker run [image_adı]
 ```
+## Docker Komutları
+
+1. Docker run:
+* docker run komutu ile docker image'larınızdan container'lar oluşturabilirsiniz.
+* ```bash
+  # en temel haliyle image çalıştırma:
+  docker run nginx
+  # Bir konteyneri arka planda çalıştırma:
+  docker run -d nginx
+  # Bir konteyneri adlandırma:
+  docker run --name my_container nginx
+  # Port yönlendirme yaparak bir web uygulamasını çalıştırma:
+  docker run -p 8080:80 nginx
+  # Konteyneri bir ağa bağlama:
+  docker run --network=my_network my_image
+  # Bir ortam değişkeni ayarlama:
+  docker run -e MY_VARIABLE=my_value my_image
+  # Konteyneri bir volume'a bağlama:
+  docker run -v /host/dizin:/container/dizin my_image
+  ```
+  
