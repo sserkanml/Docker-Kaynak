@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docker Kaynak</title>
+  <style>
+    body{
+        background-color: #F6F8F9;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="docker-nedir-">Docker Nedir?</h1>
+  <p>Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştırmanızı sağlayan bir konteynerleştirme platformudur. Konteynerler, uygulama ve bağımlılıklarını bir araya getirerek her ortamda tutarlı bir çalışma sağlar.</p>
+  <h2 id="docker-avantajlar-">Docker Avantajları</h2>
+  <ul>
+    <li>
+      <p><strong>Hafif ve Hızlı</strong>: Docker konteynerleri, sanal makinelerden daha hafif ve hızlıdır, çünkü kendi işletim sistemini paylaşırlar.</p>
+    </li>
+    <li>
+      <p><strong>Taşınabilirlik</strong>: Docker konteynerleri, herhangi bir ortamda çalıştırılabilir, bu da uygulamaların her yerde tutarlı bir şekilde çalışmasını sağlar.</p>
+    </li>
+    <li>
+      <p><strong>Yalıtım</strong>: Konteynerler, uygulamaları ve bağımlılıklarını izole eder, böylece bir konteynerde yapılan değişiklikler diğer konteynerleri etkilemez.</p>
+    </li>
+  </ul>
+  <h2 id="nas-l-kullan-l-r-">Nasıl Kullanılır?</h2>
+  <ol>
+    <li>
+      <p>Docker&#39;ı <a href="https://www.docker.com/get-started">resmi web sitesinden indirin ve yükleyin</a>.</p>
+    </li>
+    <li>
+      <p>Docker&#39;ı yükledikten sonra terminal veya komut istemcisini açın.</p>
+    </li>
+    <li>
+      <p>Docker konteyneri çalıştırmak için şu komutu kullanın:</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">   docker <span class="hljs-keyword">run</span><span class="bash"> [image_adı]</span>
+</code></pre>
+  <h2 id="docker-komutlar-">Docker Komutları</h2>
+  <ol>
+    <li>
+      <p>Docker run:</p>
+    </li>
+    <li>
+      <p>docker run komutu ile docker image&#39;larınızdan container&#39;lar oluşturabilirsiniz.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">  <span class="hljs-comment"># en temel haliyle image çalıştırma:</span>
+  docker <span class="hljs-keyword">run</span><span class="bash"> nginx
+</span>  <span class="hljs-comment"># Bir konteyneri arka planda çalıştırma:</span>
+  docker <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-_">-d</span> nginx
+</span>  <span class="hljs-comment"># Bir konteyneri adlandırma:</span>
+  docker <span class="hljs-keyword">run</span><span class="bash"> --name my_container nginx
+</span>  <span class="hljs-comment"># Port yönlendirme yaparak bir web uygulamasını çalıştırma:</span>
+  docker <span class="hljs-keyword">run</span><span class="bash"> -p 8080:80 nginx
+</span>  <span class="hljs-comment"># Konteyneri bir ağa bağlama:</span>
+  docker <span class="hljs-keyword">run</span><span class="bash"> --network=my_network my_image
+</span>  <span class="hljs-comment"># Bir ortam değişkeni ayarlama:</span>
+  docker <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-_">-e</span> MY_VARIABLE=my_value my_image
+</span>  <span class="hljs-comment"># Konteyneri bir volume'a bağlama:</span>
+  docker <span class="hljs-keyword">run</span><span class="bash"> -v /host/dizin:/container/dizin my_image</span>
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker exec:</p>
+    </li>
+    <li>
+      <p>docker exec komutu, Docker konteyneri içinde çalışan bir komutu yürütmek için kullanılır.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">  <span class="hljs-comment"># Bir komut çalıştırma:</span>
+  docker <span class="hljs-built_in">exec</span> my_container ls <span class="hljs-_">-l</span>
+  <span class="hljs-comment"># Bir interaktif kabuk başlatma:</span>
+  docker <span class="hljs-built_in">exec</span> -it my_container sh
+  <span class="hljs-comment"># Arka planda çalışan bir süreci yönetme:</span>
+  docker <span class="hljs-built_in">exec</span> <span class="hljs-_">-d</span> my_container nginx -g <span class="hljs-string">'daemon off;'</span>
+  <span class="hljs-comment"># Ortam değişkeni ekleyerek bir komut çalıştırma:</span>
+  docker <span class="hljs-built_in">exec</span> <span class="hljs-_">-e</span> MY_VARIABLE=my_value my_container <span class="hljs-built_in">echo</span> <span class="hljs-variable">$MY_VARIABLE</span>
+  <span class="hljs-comment"># Konteynerin başka bir kullanıcı kimliğiyle çalışmasını sağlama:</span>
+  docker <span class="hljs-built_in">exec</span> -u www-data my_container whoami
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker ps:</p>
+    </li>
+    <li>
+      <p>docker ps komutu, çalışan Docker konteynerlerini listeler.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">  <span class="hljs-comment"># Tüm çalışan konteynerleri listele:</span>
+  docker ps
+  <span class="hljs-comment"># Tüm konteynerleri listele (çalışan ve durmuş):</span>
+  docker ps -a
+  <span class="hljs-comment"># Özel bir formatta listeleme:</span>
+  docker ps --format <span class="hljs-string">"<span class="hljs-template-variable">{{.ID}}</span>: <span class="hljs-template-variable">{{.Image}}</span> - <span class="hljs-template-variable">{{.Names}}</span>"</span>
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker build:</p>
+    </li>
+    <li>
+      <p>docker build komutu, Docker imajlarını oluşturmak için kullanılır.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">     # komutu çalış<span class="hljs-built_in">t</span>ırarak Docker imajı<span class="hljs-built_in">n</span>ı oluşturabilirsin<span class="hljs-symbol">iz:</span>
+     docker build -<span class="hljs-built_in">t</span> my_image
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker pull:</p>
+    </li>
+    <li>
+      <p>docker pull komutu, Docker Hub veya başka bir Docker imaj deposundan bir Docker imajını indirmek için kullanılır.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">     # Ubuntu imajını indirmek iç<span class="hljs-keyword">in</span>:
+     docker pull ubuntu
+     # Eğer belirli bir sürümü (örneğ<span class="hljs-keyword">in</span> <span class="hljs-number">20.04</span>) indirmek isterseniz:
+     docker pull ubuntu:<span class="hljs-number">20.04</span>
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker push:</p>
+    </li>
+    <li>
+      <p>docker push komutu, yerel makinenizde bulunan bir Docker imajını bir Docker imaj deposuna (örneğin Docker Hub) yüklemenizi sağlar.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">     <span class="hljs-comment"># İlk olarak, docker login komutu ile Docker imaj deposuna oturum açmanız gerekir:</span>
+     docker login
+     <span class="hljs-comment"># Ardından, docker push komutunu kullanarak imajınızı yükleyebilirsiniz:</span>
+     docker push <span class="hljs-variable">&lt;repository_name&gt;</span>/<span class="hljs-variable">&lt;image_name&gt;</span>:<span class="hljs-variable">&lt;tag&gt;</span>
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker images:</p>
+    </li>
+    <li>
+      <p>docker images komutu, yerel Docker imaj deposundaki tüm Docker imajlarını listeler. Bu komut, yerel makinenizde bulunan Docker imajlarının bir listesini sunar.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash"><span class="hljs-attribute">     docker images</span>
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker login:</p>
+    </li>
+    <li>
+      <p>docker login komutu, Docker imaj deposuna (örneğin Docker Hub) oturum açmanızı sağlar.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash"><span class="hljs-attribute">     docker login</span>
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker logout:</p>
+    </li>
+    <li>
+      <p>docker logout komutu, Docker imaj deposundan (örneğin Docker Hub) oturumu kapatmanızı sağlar.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">     docker <span class="hljs-built_in">logout</span>
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker search:</p>
+    </li>
+    <li>
+      <p>docker search komutu, Docker Hub veya başka bir Docker imaj deposundaki imajları aramanızı sağlar.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">      docker <span class="hljs-keyword">search</span> &lt;keyword&gt;
+      # Örneğ<span class="hljs-keyword">in</span>, Ubuntu ile ilgili imajları aramak iç<span class="hljs-keyword">in</span>:
+      docker <span class="hljs-keyword">search</span> ubuntu
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker network:</p>
+    </li>
+    <li>
+      <p>docker network, Docker ortamında ağ oluşturma ve yönetme işlemlerini gerçekleştirmek için kullanılan bir komuttur.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">    <span class="hljs-comment"># Ağı Listeleme:</span>
+    docker network ls
+    <span class="hljs-comment"># Ağ Oluşturma:</span>
+    docker network create my_network
+    <span class="hljs-comment"># Ağ Detaylarını Görüntüleme:</span>
+    docker network <span class="hljs-keyword">inspect </span>my_network
+    <span class="hljs-comment"># Ağa Konteyner Ekleme:</span>
+    docker network connect my_network my_container
+    <span class="hljs-comment"># Ağı Konteynerden Kaldırma:</span>
+    docker network <span class="hljs-keyword">disconnect </span>my_network my_container
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker volume:</p>
+    </li>
+    <li>
+      <p>docker volume, Docker ortamında veri saklama ve paylaşma işlemlerini gerçekleştirmek için kullanılan bir komuttur.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">      <span class="hljs-comment"># Volume Listeleme:</span>
+      docker <span class="hljs-keyword">volume</span><span class="bash"> ls
+</span>      <span class="hljs-comment"># Volume Oluşturma:</span>
+      docker <span class="hljs-keyword">volume</span><span class="bash"> create my_volume
+</span>      <span class="hljs-comment"># Volume Detaylarını Görüntüleme:</span>
+      docker <span class="hljs-keyword">volume</span><span class="bash"> inspect my_volume
+</span>      <span class="hljs-comment"># Volume'i Bir Konteynere Bağlama:</span>
+      docker <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-_">-d</span> -v my_volume:/data my_image
+</span>      <span class="hljs-comment"># Birden Fazla Volume Tanımlama:</span>
+      docker <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-_">-d</span> -v my_volume1:/data1 -v my_volume2:/data2 my_image</span>
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker kill:</p>
+    </li>
+    <li>
+      <p>docker kill komutu, çalışan bir Docker konteynerini zorla sonlandırmak için kullanılır.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">      docker <span class="hljs-built_in">kill</span> my_container
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker logs:</p>
+    </li>
+    <li>
+      <p>docker logs komutu, belirli bir Docker konteynerinin loglarını görüntülemek için kullanılır.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">        <span class="hljs-attribute">docker</span> logs my_container
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker rm:</p>
+    </li>
+    <li>
+      <p>docker rm komutu, bir veya birden fazla Docker konteynerini silmek için kullanılır.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">         docker <span class="hljs-keyword">rm</span> my_container
+         # Birden fazla konteyneri silmek iç<span class="hljs-keyword">in</span>
+         docker <span class="hljs-keyword">rm</span> container1 container2 container3
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker stop:</p>
+    </li>
+    <li>
+      <p>docker stop komutu, çalışan bir Docker konteynerini durdurmak için kullanılır.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">        docker <span class="hljs-literal">stop</span> my_container
+        <span class="hljs-comment"># Birden fazla konteyneri durdurmak için:</span>
+        docker <span class="hljs-literal">stop</span> container1 container2 container3
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker inspect:</p>
+    </li>
+    <li>
+      <p>docker inspect komutu, belirli bir Docker nesnesinin (konteyner, imaj, ağ vb.) ayrıntılarını JSON formatında görüntülemek için kullanılır.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">        docker <span class="hljs-keyword">inspect</span> my_container
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker history:</p>
+    </li>
+    <li>
+      <p>docker history komutu, bir Docker imajının oluşturulma geçmişini görüntülemek için kullanılır.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">        docker <span class="hljs-built_in">history</span> ubuntu
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker pause:</p>
+    </li>
+    <li>
+      <p>docker pause komutu, bir çalışan Docker konteynerini geçici olarak duraklatmak için kullanılır.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">        docker <span class="hljs-built_in">pause</span> my_container
+</code></pre>
+  <ol>
+    <li>
+      <p>Docker unpause:</p>
+    </li>
+    <li>
+      <p>docker unpause komutu, duraklatılmış bir Docker konteynerini yeniden başlatmak için kullanılır.</p>
+    </li>
+  </ol>
+  <pre><code class="lang-bash">        <span class="hljs-attribute">docker</span> unpause my_container
+</code></pre>
+
+</body>
+
+</html>
