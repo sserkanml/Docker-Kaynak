@@ -42,4 +42,64 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
   # Konteyneri bir volume'a bağlama:
   docker run -v /host/dizin:/container/dizin my_image
   ```
-  
+2. Docker exec:
+* docker exec komutu, Docker konteyneri içinde çalışan bir komutu yürütmek için kullanılır.
+  ```bash
+  # Bir komut çalıştırma:
+  docker exec my_container ls -l
+  # Bir interaktif kabuk başlatma:
+  docker exec -it my_container sh
+  # Arka planda çalışan bir süreci yönetme:
+  docker exec -d my_container nginx -g 'daemon off;'
+  # Ortam değişkeni ekleyerek bir komut çalıştırma:
+  docker exec -e MY_VARIABLE=my_value my_container echo $MY_VARIABLE
+  # Konteynerin başka bir kullanıcı kimliğiyle çalışmasını sağlama:
+  docker exec -u www-data my_container whoami```
+3. Docker ps:
+* docker ps komutu, çalışan Docker konteynerlerini listeler:
+  ```bash
+  # Tüm çalışan konteynerleri listele:
+  docker ps
+  # Tüm konteynerleri listele (çalışan ve durmuş):
+  docker ps -a
+  # Özel bir formatta listeleme:
+  docker ps --format "{{.ID}}: {{.Image}} - {{.Names}}"```
+4. Docker build:
+   * docker build komutu, Docker imajlarını oluşturmak için kullanılır:
+     ```bash
+     # komutu çalıştırarak Docker imajını oluşturabilirsiniz:
+     docker build -t my_image```
+5. Docker pull:
+   * docker pull komutu, Docker Hub veya başka bir Docker imaj deposundan bir Docker imajını indirmek için kullanılır.
+     ```bash
+     # Ubuntu imajını indirmek için:
+     docker pull ubuntu
+     # Eğer belirli bir sürümü (örneğin 20.04) indirmek isterseniz:
+     docker pull ubuntu:20.04```
+6. Docker push:
+   * docker push komutu, yerel makinenizde bulunan bir Docker imajını bir Docker imaj deposuna (örneğin Docker Hub) yüklemenizi sağlar
+     ```bash
+     # İlk olarak, docker login komutu ile Docker imaj deposuna oturum açmanız gerekir:
+     docker login
+     # Ardından, docker push komutunu kullanarak imajınızı yükleyebilirsiniz:
+     docker push <repository_name>/<image_name>:<tag>```
+7. Docker images:
+   * docker images komutu, yerel Docker imaj deposundaki tüm Docker imajlarını listeler. Bu komut, yerel makinenizde bulunan Docker imajlarının bir listesini sunar
+     ```bash
+     docker images```
+8. Docker login:
+   * docker login komutu, Docker imaj deposuna (örneğin Docker Hub) oturum açmanızı sağlar:
+     ```bash
+     docker login```
+9. Docker logout:
+   * docker logout komutu, Docker imaj deposundan (örneğin Docker Hub) oturumu kapatmanızı sağlar
+     ```bash
+     docker logout```
+10. Docker search:
+    * docker search komutu, Docker Hub veya başka bir Docker imaj deposundaki imajları aramanızı sağlar:
+      ```bash
+      docker search <keyword>
+      # Örneğin, Ubuntu ile ilgili imajları aramak için:
+      docker search ubuntu ```
+11. Docker network:
+    
