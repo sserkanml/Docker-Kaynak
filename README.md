@@ -24,9 +24,10 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
 ## Docker Komutları
 
 1. Docker run:
-   * docker run komutu ile docker image'larınızdan container'lar oluşturabilirsiniz.
+   
+* docker run komutu ile docker image'larınızdan container'lar oluşturabilirsiniz.
   
- ```bash
+```bash
   # en temel haliyle image çalıştırma:
   docker run nginx
   # Bir konteyneri arka planda çalıştırma:
@@ -41,12 +42,12 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
   docker run -e MY_VARIABLE=my_value my_image
   # Konteyneri bir volume'a bağlama:
   docker run -v /host/dizin:/container/dizin my_image
-  ```
+```
 2. Docker exec:
    
-   * docker exec komutu, Docker konteyneri içinde çalışan bir komutu yürütmek için kullanılır.
+* docker exec komutu, Docker konteyneri içinde çalışan bir komutu yürütmek için kullanılır.
   
-  ```bash
+```bash
   # Bir komut çalıştırma:
   docker exec my_container ls -l
   # Bir interaktif kabuk başlatma:
@@ -57,82 +58,82 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
   docker exec -e MY_VARIABLE=my_value my_container echo $MY_VARIABLE
   # Konteynerin başka bir kullanıcı kimliğiyle çalışmasını sağlama:
   docker exec -u www-data my_container whoami
-  ```
+```
 3. Docker ps:
    
-   * docker ps komutu, çalışan Docker konteynerlerini listeler.
+* docker ps komutu, çalışan Docker konteynerlerini listeler.
   
-  ```bash
+```bash
   # Tüm çalışan konteynerleri listele:
   docker ps
   # Tüm konteynerleri listele (çalışan ve durmuş):
   docker ps -a
   # Özel bir formatta listeleme:
   docker ps --format "{{.ID}}: {{.Image}} - {{.Names}}"
-  ```
+```
 4. Docker build:
    
-   * docker build komutu, Docker imajlarını oluşturmak için kullanılır.
+* docker build komutu, Docker imajlarını oluşturmak için kullanılır.
      
-   ```bash
+```bash
      # komutu çalıştırarak Docker imajını oluşturabilirsiniz:
      docker build -t my_image
-   ```
+```
 6. Docker pull:
    
-   * docker pull komutu, Docker Hub veya başka bir Docker imaj deposundan bir Docker imajını indirmek için kullanılır.
+* docker pull komutu, Docker Hub veya başka bir Docker imaj deposundan bir Docker imajını indirmek için kullanılır.
      
-   ```bash
+```bash
      # Ubuntu imajını indirmek için:
      docker pull ubuntu
      # Eğer belirli bir sürümü (örneğin 20.04) indirmek isterseniz:
      docker pull ubuntu:20.04
-   ```
+```
 7. Docker push:
    
-   * docker push komutu, yerel makinenizde bulunan bir Docker imajını bir Docker imaj deposuna (örneğin Docker Hub) yüklemenizi sağlar.
+* docker push komutu, yerel makinenizde bulunan bir Docker imajını bir Docker imaj deposuna (örneğin Docker Hub) yüklemenizi sağlar.
      
-   ```bash
+```bash
      # İlk olarak, docker login komutu ile Docker imaj deposuna oturum açmanız gerekir:
      docker login
      # Ardından, docker push komutunu kullanarak imajınızı yükleyebilirsiniz:
      docker push <repository_name>/<image_name>:<tag>
-   ```
+```
 9. Docker images:
     
-   * docker images komutu, yerel Docker imaj deposundaki tüm Docker imajlarını listeler. Bu komut, yerel makinenizde bulunan Docker imajlarının bir listesini sunar.
+* docker images komutu, yerel Docker imaj deposundaki tüm Docker imajlarını listeler. Bu komut, yerel makinenizde bulunan Docker imajlarının bir listesini sunar.
      
-   ```bash
+```bash
      docker images
-   ```
+```
 11. Docker login:
     
-   * docker login komutu, Docker imaj deposuna (örneğin Docker Hub) oturum açmanızı sağlar.
+* docker login komutu, Docker imaj deposuna (örneğin Docker Hub) oturum açmanızı sağlar.
      
-   ```bash
+```bash
      docker login
-   ```
+```
 12. Docker logout:
     
-   * docker logout komutu, Docker imaj deposundan (örneğin Docker Hub) oturumu kapatmanızı sağlar.
+* docker logout komutu, Docker imaj deposundan (örneğin Docker Hub) oturumu kapatmanızı sağlar.
      
-     ```bash
+```bash
      docker logout
-     ```
+```
 13. Docker search:
     
-    * docker search komutu, Docker Hub veya başka bir Docker imaj deposundaki imajları aramanızı sağlar.
+* docker search komutu, Docker Hub veya başka bir Docker imaj deposundaki imajları aramanızı sağlar.
       
-  ```bash
+```bash
       docker search <keyword>
       # Örneğin, Ubuntu ile ilgili imajları aramak için:
       docker search ubuntu
-  ```
+```
 14. Docker network:
     
-    * docker network, Docker ortamında ağ oluşturma ve yönetme işlemlerini gerçekleştirmek için kullanılan bir komuttur.
+* docker network, Docker ortamında ağ oluşturma ve yönetme işlemlerini gerçekleştirmek için kullanılan bir komuttur.
       
-  ```bash
+```bash
     # Ağı Listeleme:
     docker network ls
     # Ağ Oluşturma:
@@ -143,12 +144,12 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
     docker network connect my_network my_container
     # Ağı Konteynerden Kaldırma:
     docker network disconnect my_network my_container
-  ```
+```
 15. Docker volume:
     
-    * docker volume, Docker ortamında veri saklama ve paylaşma işlemlerini gerçekleştirmek için kullanılan bir komuttur.
+* docker volume, Docker ortamında veri saklama ve paylaşma işlemlerini gerçekleştirmek için kullanılan bir komuttur.
       
-    ```bash
+```bash
       # Volume Listeleme:
       docker volume ls
       # Volume Oluşturma:
@@ -159,62 +160,67 @@ Docker, uygulamalarınızı hızla dağıtmanızı, paketlemenizi ve çalıştı
       docker run -d -v my_volume:/data my_image
       # Birden Fazla Volume Tanımlama:
       docker run -d -v my_volume1:/data1 -v my_volume2:/data2 my_image
-    ```
-  16. Docker kill:
+```
+16. Docker kill:
       
-      * docker kill komutu, çalışan bir Docker konteynerini zorla sonlandırmak için kullanılır.
+* docker kill komutu, çalışan bir Docker konteynerini zorla sonlandırmak için kullanılır.
         
-      ```bash
+```bash
       docker kill my_container
-      ```
-  17. Docker logs:
+```
+17. Docker logs:
       
-      * docker logs komutu, belirli bir Docker konteynerinin loglarını görüntülemek için kullanılır.
+* docker logs komutu, belirli bir Docker konteynerinin loglarını görüntülemek için kullanılır.
         
-    ```bash
+```bash
         docker logs my_container
-    ```
-  19. Docker rm:
+```
+19. Docker rm:
       
-      * docker rm komutu, bir veya birden fazla Docker konteynerini silmek için kullanılır.
+* docker rm komutu, bir veya birden fazla Docker konteynerini silmek için kullanılır.
         
-      ```bash
+```bash
          docker rm my_container
          # Birden fazla konteyneri silmek için
          docker rm container1 container2 container3
-      ```
-  21. Docker stop:
-      * docker stop komutu, çalışan bir Docker konteynerini durdurmak için kullanılır.
+```
+21. Docker stop:
+    
+* docker stop komutu, çalışan bir Docker konteynerini durdurmak için kullanılır.
         
-        ```bash
+```bash
         docker stop my_container
         # Birden fazla konteyneri durdurmak için:
         docker stop container1 container2 container3
-        ```
-  22. Docker inspect:
-      * docker inspect komutu, belirli bir Docker nesnesinin (konteyner, imaj, ağ vb.) ayrıntılarını JSON formatında görüntülemek için kullanılır.
+```
+22. Docker inspect:
+    
+* docker inspect komutu, belirli bir Docker nesnesinin (konteyner, imaj, ağ vb.) ayrıntılarını JSON formatında görüntülemek için kullanılır.
         
-        ```bash
+```bash
         docker inspect my_container
-        ```
-  23. Docker history:
-      * docker history komutu, bir Docker imajının oluşturulma geçmişini görüntülemek için kullanılır.
+```
+23. Docker history:
+    
+* docker history komutu, bir Docker imajının oluşturulma geçmişini görüntülemek için kullanılır.
         
-        ```bash
+```bash
         docker history ubuntu
-        ```
-  24. Docker pause:
-      * docker pause komutu, bir çalışan Docker konteynerini geçici olarak duraklatmak için kullanılır.
+```
+25. Docker pause:
+    
+* docker pause komutu, bir çalışan Docker konteynerini geçici olarak duraklatmak için kullanılır.
         
-        ```bash
+```bash
         docker pause my_container
-        ```
-  25. Docker unpause:
-      * docker unpause komutu, duraklatılmış bir Docker konteynerini yeniden başlatmak için kullanılır.
+```
+26. Docker unpause:
+    
+* docker unpause komutu, duraklatılmış bir Docker konteynerini yeniden başlatmak için kullanılır.
         
-        ```bash
+```bash
         docker unpause my_container
-        ```
+```
         
         
 
