@@ -11,9 +11,9 @@ Teşekkür ederiz ki Docker projesine katkıda bulunmak istiyorsunuz! Lütfen a�
 
 1. Bu depoyu (`repository`) çatallayın (fork) ve klonlayın:
 
-   ```bash
-   git clone https://github.com/sserkanml/Docker-Kaynak.git
-   ```
+```bash
+git clone https://github.com/sserkanml/Docker-Kaynak.git
+```
 2. Yeni bir dal (branch) oluşturun ve üzerine geçin:
  ```bash
 git checkout -b <branch-name>
